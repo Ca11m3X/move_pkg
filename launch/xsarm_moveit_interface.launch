@@ -58,8 +58,8 @@
 
   <group if="$(arg plot)">
 
-    <node name="plot_node" pkg="move_pkg" type="plot.py"></node>
-    <node name="plot_pose_node" pkg="move_pkg" type="plot_pose.py"></node>
+    <node name="plot_node" pkg="move_pkg" type="plot"></node>
+    <node name="plot_pose_node" pkg="move_pkg" type="plot_pose"></node>
 
   </group>
 
