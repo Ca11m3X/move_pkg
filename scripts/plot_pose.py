@@ -37,7 +37,7 @@ class Ploting():
             plt.plot(self.time, self.data[i], marker=".")
             plt.tight_layout()
             plt.savefig(
-                f'/home/drx/test_ws/src/move_pkg/scripts/figure/{self.axes[i]}.png')
+                f'/scripts/figure/{self.axes[i]}.png')
 
 
 if __name__ == "__main__":

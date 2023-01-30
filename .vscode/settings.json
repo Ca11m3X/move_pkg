@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/drx/udemy_ws/devel/lib/python3/dist-packages",
+        "/home/drx/interbotix_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "ros.distro": "noetic",
+    "python.analysis.extraPaths": [
+        "/home/drx/udemy_ws/devel/lib/python3/dist-packages",
+        "/home/drx/interbotix_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "C_Cpp.errorSquiggles": "disabled"
+}

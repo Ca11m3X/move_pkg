@@ -581,9 +581,10 @@ def main():
     input()
     tutorial.go_to_sleep_pose()
 
-    print("============ Python tutorial demo complete!=================")
+    print("============ Simulation complete!=================")
     rospy.spin()
 
 
 if __name__ == '__main__':
     main()
+    print("============ Good Bye!============")
