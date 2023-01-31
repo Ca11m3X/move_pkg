@@ -15,8 +15,6 @@
   <arg name="use_fake" default="true"/>
   <arg name="dof" default="6"/>
   <arg name="world_name" default="$(find interbotix_xsarm_gazebo)/worlds/xsarm_gazebo.world"/>
-  <arg name="use_cpp_interface" default="false"/>
-  <arg name="moveit_interface_gui" default="true"/>
   <arg name="use_python_interface" default="true"/>
   <arg name="plot" default="false"/>
 
@@ -39,22 +37,12 @@
     <arg name="world_name" value="$(arg world_name)"/>
   </include>
 
-  <group if="$(arg use_cpp_interface)">
-
-    <node name="moveit_interface" pkg="interbotix_moveit_interface" type="moveit_interface" respawn="false" output="screen" ns="$(arg robot_name)"/>
-
-    <node if="$(arg moveit_interface_gui)" name="moveit_interface_gui" pkg="interbotix_moveit_interface" type="moveit_interface_gui" output="screen" ns="$(arg robot_name)"/>
-
-  </group>
-
   <node if="$(arg use_python_interface)" name="moveit_python_interface" pkg="move_pkg" type="moveit_python_interface" respawn="false" output="screen" ns="$(arg robot_name)">
     <rosparam command="load" file="$(find interbotix_xsarm_moveit_interface)/config/$(arg robot_model).yaml"/>
     <param name="robot_model" value="$(arg robot_model)"/>
     <remap from="/attached_collision_object" to="/$(arg robot_name)/attached_collision_object"/>
     <remap from="/collision_object" to="/$(arg robot_name)/collision_object"/>
   </node>
-
-
 
   <group if="$(arg plot)">
 

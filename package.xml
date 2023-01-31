@@ -92,8 +92,6 @@
   <exec_depend>moveit_planners_ompl</exec_depend>
   <exec_depend>moveit_ros_visualization</exec_depend>
   <exec_depend>moveit_setup_assistant</exec_depend>
-  <exec_depend>joint_state_publisher</exec_depend>
-  <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>xacro</exec_depend>
   <exec_depend>interbotix_xsarm_gazebo</exec_depend>
   <exec_depend>interbotix_xsarm_descriptions</exec_depend>
@@ -102,12 +100,10 @@
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>roslaunch</exec_depend>
   <exec_depend>rviz</exec_depend>
-  <exec_depend>xacro</exec_depend>
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>effort_controllers</exec_depend>
   <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>gazebo_ros_control</exec_depend>
-  <exec_depend>interbotix_xsarm_descriptions</exec_depend>
   <exec_depend>joint_state_controller</exec_depend>
   <exec_depend>joint_trajectory_controller</exec_depend>
   <exec_depend>message_runtime</exec_depend>

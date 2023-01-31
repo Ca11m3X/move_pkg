@@ -161,9 +161,6 @@ include
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/move_pkg_node.cpp)
-add_executable(moveit_interface src/moveit_interface.cpp src/moveit_interface_obj.cpp)
-target_link_libraries(moveit_interface ${catkin_LIBRARIES})
-add_dependencies(moveit_interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -194,7 +191,6 @@ add_dependencies(moveit_interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_E
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 catkin_install_python(PROGRAMS
-  scripts/moveit_interface_gui
   scripts/moveit_python_interface
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
