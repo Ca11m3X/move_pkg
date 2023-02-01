@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
 
-import sys
 import copy
-import rospy
+import sys
+from math import pi
+
+import geometry_msgs.msg
 import moveit_commander
 import moveit_msgs.msg
-import geometry_msgs.msg
-from math import pi
+import rospy
+from geometry_msgs.msg import Pose
+from moveit_commander.conversions import pose_to_list
+from moveit_msgs.msg import CollisionObject
+from moveit_msgs.srv import (GetPositionFK, GetPositionFKRequest,
+                             GetPositionFKResponse)
+from sensor_msgs.msg import JointState
+from shape_msgs.msg import SolidPrimitive
 from six.moves import input
 from std_msgs.msg import String
 from tf.transformations import quaternion_from_euler
-from moveit_commander.conversions import pose_to_list
-from moveit_msgs.msg import CollisionObject
-from shape_msgs.msg import SolidPrimitive
-from geometry_msgs.msg import Pose
-from visualization_msgs.msg import Marker, MarkerArray
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
+from visualization_msgs.msg import Marker, MarkerArray
+
 from move_pkg.msg import EE_Pose
-# TEST
-from moveit_msgs.srv import GetPositionFK
-from moveit_msgs.srv import GetPositionFKRequest
-from moveit_msgs.srv import GetPositionFKResponse
-from sensor_msgs.msg import JointState
 
 
 class Pub_marker():
@@ -161,7 +161,6 @@ class MoveGroupPythonIntefaceTutorial(object):
         self.gripper.stop()
         current_joints = self.gripper.get_current_joint_values()
         return all_close(goal, current_joints, 0.01)
-        self.grippers.gripper.open()
 
     def close_gripper(self):
         goal = [0.04, 0.04]
@@ -481,6 +480,7 @@ def main():
     get_ee_pose = COMPUTE_FK(fk_link=tutorial.eef_link,
                              frame_id="vx300s/base_link")
     tutorial.go_to_home_pose()
+    # tutorial.open_gripper()
 
     input()
     tutorial.set_pose_goal_raw([0.4, 0.0, 0.2, 0., 1.57, 0.0])
